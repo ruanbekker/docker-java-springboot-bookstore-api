@@ -39,23 +39,23 @@ curl http://localhost:8080/api/books
 Create a book:
 
 ```bash
-curl -XPOST -H 'Content-Type: application/json' http://localhost:8080/api/books -d '{"title": "Example Book Title", "author": "Author Names"}'
+curl -XPOST -H 'Content-Type: application/json' http://localhost:8080/api/books -d '{"title": "Example Book Title", "author": "Author Name"}'
 ```
 
 Update a book:
 
 ```bash
-curl -XPUT -H 'Content-Type: application/json' http://localhost:8080/api/books/6 -d '{"title": "foooooooomy Example Book"}'
+curl -XPUT -H 'Content-Type: application/json' http://localhost:8080/api/books/6 -d '{"title": "Another Title"}'
 ```
 
 View a single book:
 
 ```bash
-curl http://localhost:8080/api/books/6
+curl http://localhost:8080/api/books/1
 ```
 
 Delete a book:
 
 ```bash
-curl -XDELETE http://localhost:8080/api/books/6
+curl -XDELETE http://localhost:8080/api/books/1
 ```
