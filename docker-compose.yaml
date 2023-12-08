@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: app
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/books_db
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: pass
+    networks:
+      - bookstore
+
+  db:
+    container_name: db
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: books_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3306:3306"
+    networks:
+      - bookstore
+
+networks:
+  bookstore:
+    name: bookstore
+
