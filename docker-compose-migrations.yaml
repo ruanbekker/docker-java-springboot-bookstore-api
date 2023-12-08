@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  migrations:
+    container_name: migrations
+    image: liquibase/liquibase:4.23.2
+    restart: no
+    environment:
+      INSTALL_MYSQL: true
+    volumes:
+      - ./src/main/resources/liquibase.properties:/liquibase/src/main/resources/liquibase.properties
+      - ./src/main/resources/liquibase:/liquibase/src/main/resources/liquibase:ro
+    command:
+      --driver=com.mysql.cj.jdbc.Driver
+      --defaults-file=src/main/resources/liquibase.properties update
+    networks:
+      - bookstore
+
+networks:
+  bookstore:
+    name: bookstore

@@ -8,13 +8,29 @@ Example: Java Spring Boot Bookstore API with Docker, MySQL and Liquibase
 - Liquibase (Database Migrations)
 - Docker
 
-## Boot
+## Getting Started
+
+Start the database container:
+
+```bash
+docker compose up -d db
+```
+
+Run database migrations:
+
+```bash
+docker compose -f docker-compose-migrations.yaml run migrations
+```
+
+Build and start the application:
 
 ```bash
 docker compose up -d --build
 ```
 
-## Database Migrations
+## Database Migrations (without docker compose)
+
+This is when you want to run it natively / without docker compose.
 
 To run migrations:
 
