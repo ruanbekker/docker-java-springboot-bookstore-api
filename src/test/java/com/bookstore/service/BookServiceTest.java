@@ -1,5 +1,6 @@
-package com.bookstore.service;
 // Purpose: To test the service layer (business logic).
+package com.bookstore.service;
+
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
