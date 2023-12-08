@@ -45,7 +45,7 @@ curl -XPOST -H 'Content-Type: application/json' http://localhost:8080/api/books 
 Update a book:
 
 ```bash
-curl -XPUT -H 'Content-Type: application/json' http://localhost:8080/api/books/6 -d '{"title": "Another Title"}'
+curl -XPUT -H 'Content-Type: application/json' http://localhost:8080/api/books/1 -d '{"title": "Another Title"}'
 ```
 
 View a single book:
